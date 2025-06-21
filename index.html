@@ -15,7 +15,7 @@
                   height: 100vh;
                   margin: 0;
                   text-align: center;
-                  background-image: url("https://jose-luan19.github.io/app-amor/amor.jpg");
+                  background-image: url("amor.jpg");
                   background-repeat: repeat;
                   background-size: contain;
             }
@@ -101,7 +101,7 @@
 
             .main {
                   margin-top: 50px;
-                  background-color: rgba(255, 77, 109, 0.2); 
+                  background-color: rgba(255, 77, 109, 0.2);
                   border-radius: 15px;
             }
 
@@ -125,18 +125,28 @@
                   opacity: 1;
                   pointer-events: auto;
             }
-            #main-page{
+
+            #main-page {
                   margin: 20px;
             }
       </style>
 </head>
 
 <body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
       <!-- Música de fundo -->
-      <audio autoplay loop>
+      <!-- <audio autoplay loop>
             <source src="https://jose-luan19.github.io/app-amor/musica.mp3" type="audio/mpeg">
             Seu navegador não suporta áudio.
-      </audio>
+      </audio> -->
+      <script>
+            const som = new Howl({
+                  src: ['musica.mp3'],
+                  autoplay: true,
+                  loop: true,
+                  volume: 0.8,
+            });
+      </script>
 
       <div class="main">
             <div id="main-page">
@@ -171,7 +181,7 @@
                         const botaoNao = document.getElementById("no-button");
                         const deslocX = (Math.random() * 600 - 300); // entre -100px e +100px
                         const deslocY = (Math.random() * 300 - 150);  // entre -50px e +50px
-                        
+
                         botaoNao.style.transform = `translate(${deslocX}px, ${deslocY}px)`;
 
                         const toast = document.getElementById("toast");
